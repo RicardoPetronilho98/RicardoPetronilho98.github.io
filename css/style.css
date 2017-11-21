@@ -1,4 +1,5 @@
 nav {
+
   color: #fff;
   background-color: #000000bd;
   width: 100%;
@@ -7,6 +8,7 @@ nav {
 }
 
 nav .brand-logo {
+
   position: absolute;
   color: #fff;
   display: inline-block;
@@ -28,6 +30,7 @@ header, main, footer {
 */
 
 .footer{
+
   background: #000000bd;
   color: #fff;
   padding: 20px 0;
@@ -50,6 +53,7 @@ header, main, footer {
 
 
 .tap-target {
+
   position: absolute;
   font-size: 1rem;
   border-radius: 50%;
@@ -67,4 +71,22 @@ header, main, footer {
   transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
+.btn-floating {
+  
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  background-color: #949494;
+  border-radius: 50%;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+  vertical-align: middle;
+}
 
