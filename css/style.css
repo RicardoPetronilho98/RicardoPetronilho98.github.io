@@ -37,6 +37,7 @@ header, main, footer {
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 65px;
     overflow:hidden;
   
   /*font-weight: 100;*/ /*coloca a frase em não negrito!*/
