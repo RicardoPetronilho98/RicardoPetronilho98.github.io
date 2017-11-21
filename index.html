@@ -55,7 +55,7 @@
 			<div class="fixed-action-btn hide-on-large-only" style="bottom: 25px; right: 24px;">
           
 		        <!-- Element Showed -->
-		        <a id="menu" onclick="$('.tap-target').tapTarget('open')" class="waves-effect waves-light btn btn-floating"><i class="material-icons">menu</i></a>
+		        <a id="menu" onclick="$('.tap-target').tapTarget('open')" class="waves-effect waves-light btn btn-floating pulse"><i class="material-icons">menu</i></a>
 
 		        <!-- Tap Target Structure -->
 		        <div class="tap-target" data-activates="menu">
@@ -82,6 +82,27 @@
 
   			</div>
 		 	
+  			<br>
+
+		 	<!--TAB com info-->
+          	<div class="row">
+            
+	            <ul class="tabs">
+	              <li class="tab col s6"><a class="active" href="#tab1">WHO Am I?</a></li>
+	              <li class="tab col s6"><a href="#tab2">RESUME</a></li>
+	            </ul>
+
+	            <!--info da TAB WHO AM I-->
+	            <div id="tab1" class="card-panel hoverable blue-grey lighten-4">
+	              <span class="grey-text text-darken-3">I'm a Computer Engineering student at Universidade do Minho in Braga, Portugal. I really enjoy programming and I'm always up to a project!</span>
+	            </div>
+	            
+	             <!--info da TAB RESUME-->
+	            <div id="tab2" class="card-panel hoverable blue-grey lighten-4">
+	              <span class="grey-text text-darken-3">something here</span>
+	            </div>
+
+          	</div> <!--acaba a TAB com info-->
 						
 			
 
@@ -102,6 +123,8 @@
 
 
         	$('document').ready(function(){
+
+        		$('ul.tabs').tabs();
 
 			    
 
