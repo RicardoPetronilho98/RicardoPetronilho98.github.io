@@ -125,7 +125,7 @@
 		 	
   			<br>
 
-		 	<!--TAB com info-->
+		 	<!--TABELAS com info-->
           	<div class="row">
             
 	            <ul class="tabs">
@@ -180,16 +180,13 @@
 
        	
 			    
+			    //toast for Desktop
 			    if (document.documentElement.clientWidth > 992){
 
 			    	//cria um toast com um botão que elemina o toast quando clicado
-			    	var $toastContent = $('<span>Move mouse over my photo to see more details</span>').add($('<button class="blue-text btn-flat toast-action" onclick="toastInstance.remove()">I got it</button>'));
+			    	var $toastContent = $('<span>Move mouse over my photo to see more details</span>').add($('<button class="white-text btn-flat toast-action" onclick="Materialize.Toast.removeAll();">I got it</button>'));
 
-			    	Materialize.toast($toastContent, 15000); //toast permanece no máximo 15 segundos
-
-			    	//funções que indicam qual o toast a ser eleminado
-				    var toastElement = $('.toast').first()[0];
-				    var toastInstance = toastElement.M_Toast; 
+			    	Materialize.toast($toastContent, 15000, "rounded"); //toast permanece no máximo 15 segundos
 			    }
 			      
 			    
