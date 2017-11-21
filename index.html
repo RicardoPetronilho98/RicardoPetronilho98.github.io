@@ -20,13 +20,14 @@
 
 	<main>		
 
-		<!--Side Nav-->
-		<ul id="slide-out" class="side-nav fixed">
+		<!--Side Nav for Mobile-->
+		<ul id="slide-out" class="side-nav hide-on-large-only">
+        	<!--
         	<div class="input-field" style="width: 93%; padding-left: 5%">
           		<i class="material-icons prefix" style="padding-left: 4%; padding-top: 5%">search</i>
           		<input type="text" id="autocomplete-input" class="autocomplete">
-          		<!--<label for="autocomplete-input">Search here</label>-->
-        	</div>
+          		<label for="autocomplete-input">Search here</label>
+        	</div>-->
 		    <li><a href="#!"><i class="material-icons">home</i>My facebook</a></li>
 		    <li><a href="#!"><i class="material-icons">person</i>My github</a></li>
 		    <li><a href="#!"><i class="material-icons">work</i>My stackoveflow</a></li>
@@ -34,13 +35,28 @@
 		    <li><a href="#!"><i class="material-icons">settings</i>Settings</a></li>
 	  	</ul>
 
-	  	<nav>
-
+	  	
+	  	<!--Navigation bar for Mobile-->
+	  	<nav class="hide-on-large-only">
 	  		<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
 		    <a href="#" class="brand-logo right-align" style="padding-left: 2%">Ricardo Petronilho</a>
-
 		</nav>
+
+		
+		<!--Navigation bar for Desktop-->
+		<nav class="hide-on-med-and-down">
+		    <div class="container">
+		      <div class="nav-wrapper">
+		        <a href="#" class="brand-logo waves-effect">Ricardo Petronilho</a>
+		        <ul class="right">
+		          <li><a class="waves-effect" href="https://github.com/RicardoPetronilho98">My github</a></li>
+		          <li><a class="waves-effect" href="https://www.facebook.com/ricardo.petronilho98">My facebook</a></li>
+		          <li><a class="waves-effect" href="https://stackoverflow.com/users/8709667/ricardo-petronilho?">My stackoverflow</a></li>
+		        </ul>
+		      </div>
+		    </div>
+		</nav>		
 
 
 		<div class="container">
@@ -52,6 +68,8 @@
  			</center>
 
 
+			
+ 			<!--Botão de detalhes para Mobile-->
 			<div class="fixed-action-btn hide-on-large-only" style="bottom: 25px; right: 24px;">
           
 		        <!-- Element Showed -->
@@ -79,8 +97,7 @@
 	             
 		          </div>
 		        </div>
-
-  			</div>
+  			</div> <!--fim do botão dos detalhes para Mobile-->
 		 	
   			<br>
 
