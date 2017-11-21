@@ -5,11 +5,14 @@
 	    
 	    <!--Import Google Icon Font-->
 	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	    
 	    <!--Import materialize.css-->
 	    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
 	    <!--importar o meu código CSS-->
 	    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	    <!--Let browser know website is optimized for mobile-->
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -22,16 +25,21 @@
 
 		<!--Side Nav for Mobile-->
 		<ul id="slide-out" class="side-nav hide-on-large-only">
+        	<br>
         	<!--
         	<div class="input-field" style="width: 93%; padding-left: 5%">
           		<i class="material-icons prefix" style="padding-left: 4%; padding-top: 5%">search</i>
           		<input type="text" id="autocomplete-input" class="autocomplete">
           		<label for="autocomplete-input">Search here</label>
         	</div>-->
-		    <li><a href="#!"><i class="material-icons">home</i>My facebook</a></li>
-		    <li><a href="#!"><i class="material-icons">person</i>My github</a></li>
-		    <li><a href="#!"><i class="material-icons">work</i>My stackoveflow</a></li>
+		    <li><a href="#!"><i class="fa fa-facebook-square" style="font-size:36px"></i>My facebook</a></li>
+		    <br>
+		    <li><a href="#!"><i class="fa fa-github" style="font-size:36px"></i>My github</a></li>
+		    <br>
+		    <li><a href="#!"><i class="fa fa-stack-overflow" style="font-size:36px"></i>My stackoveflow</a></li>
+		    <br>
 		    <li><div class="divider"></div></li>
+		    <br>
 		    <li><a href="#!"><i class="material-icons">settings</i>Settings</a></li>
 	  	</ul>
 
@@ -164,81 +172,63 @@
     </footer>
 
 
-
-		
-
-
-
-
-
-
-	  	<!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/myScript.js"></script>
-        <script type="text/javascript">
+  	<!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/myScript.js"></script>
+    <script type="text/javascript">
 
 
-        	$('document').ready(function(){
+    	$('document').ready(function(){
 
-        		$('ul.tabs').tabs();
+    		$('ul.tabs').tabs();
 
-        		//setTimeout é uma função em javascript para adiar a execução de outras funções
-       			setTimeout(
-       				
-       				function(){ Materialize.fadeInImage('#fotoPerfil'); }, 
-       				600
-       			);
+    		//setTimeout é uma função em javascript para adiar a execução de outras funções
+   			setTimeout(
+   				
+   				function(){ Materialize.fadeInImage('#fotoPerfil'); }, 
+   				600
+   			);
 
-       	
-			    
-			    //toast for Desktop
-			    if (document.documentElement.clientWidth > 992){
+   	
+		    
+		    //toast for Desktop
+		    if (document.documentElement.clientWidth > 992){
 
-			    	//cria um toast com um botão que elemina o toast quando clicado
-			    	var $toastContent = $('<span>Move mouse over my photo to see more details</span>').add($('<button class="white-text btn-flat toast-action" onclick="Materialize.Toast.removeAll();">I got it</button>'));
+		    	//cria um toast com um botão que elemina o toast quando clicado
+		    	var $toastContent = $('<span>Move mouse over my photo to see more details</span>').add($('<button class="white-text btn-flat toast-action" onclick="Materialize.Toast.removeAll();">I got it</button>'));
 
-			    	Materialize.toast($toastContent, 15000, "rounded"); //toast permanece no máximo 15 segundos
-			    }
+		    	Materialize.toast($toastContent, 15000, "rounded"); //toast permanece no máximo 15 segundos
+		    }
+		      
+		    
+
+		    
+
+		    $('.button-collapse').sideNav({
 			      
-			    
+			      menuWidth: 300, // Default is 300
+			      edge: 'left', // Choose the horizontal origin
+			      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+			      draggable: true, // Choose whether you can drag to open on touch screens,
+			      onOpen: function(el) { }, // 'rounded' is the class I'm applying to the toast) { }, // A function to be called when sideNav is opened
+			      onClose: function(el) { }, // A function to be called when sideNav is closed
+			 });
 
-			    
+		   
 
-			    $('.button-collapse').sideNav({
-				      
-				      menuWidth: 300, // Default is 300
-				      edge: 'left', // Choose the horizontal origin
-				      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-				      draggable: true, // Choose whether you can drag to open on touch screens,
-				      onOpen: function(el) { }, // 'rounded' is the class I'm applying to the toast) { }, // A function to be called when sideNav is opened
-				      onClose: function(el) { }, // A function to be called when sideNav is closed
-				 });
-
-			   
-
-				// Initialize collapse button
-			    $(".button-collapse").sideNav();
-			    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-			    //$('.collapsible').collapsible();
+			// Initialize collapse button
+		    $(".button-collapse").sideNav();
+		    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+		    //$('.collapsible').collapsible();
 
 
 
-        	});
+    	});
 
-        	
-        	
+    	
+    	
 
-        </script>
+    </script>
 
 </html>
-
-
-
-
-
-
-
-
-
-
