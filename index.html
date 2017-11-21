@@ -64,9 +64,31 @@
 			<br>
 
  			<center>
- 				<img style="width: 40%; height: 40%; align: center" class="circle materialboxed" src="images/profile.png">	
+ 				<img style="width: 40%; height: 40%; opacity: 0" 
+ 					 src="images/profile.png" 
+ 					 onmouseover="document.getElementById('moreInfo').classList.add('scale-in');" 
+ 					 onmouseout="document.getElementById('moreInfo').classList.remove('scale-in');" 
+ 					 alt="Perfil" 
+ 					 id="fotoPerfil" 
+ 					 class="circle hoverable responsive-img">	
  			</center>
 
+			<div class="hide-on-med-and-down" style="position: absolute; top: 25%; right: 17%;">
+	 			<ul class="col s3 scale-transition scale-out" id="moreInfo">
+		          <li>
+		              <i class=" teal-text text-lighten-2 material-icons">location_on</i>
+		              <span class="condensed light"> Travessa da Quinta, Nº22, Fraião, <br>4715-336 Braga (Portugal)</span>
+		          </li>
+		          <li>
+		            <i class=" teal-text text-lighten-2 material-icons">phone_android</i>
+		            <span class="condensed light">+351 913455570</span>
+		          </li>
+		          <li>
+		            <i class=" teal-text text-lighten-2 material-icons">email</i>
+		            <span class="condensed light">rpetronilho98@gmail.com</span>
+		          </li>
+		        </ul>
+	   		</div>
 
 			
  			<!--Botão de detalhes para Mobile-->
@@ -75,7 +97,7 @@
 		        <!-- Element Showed -->
 		        <a id="menu" onclick="$('.tap-target').tapTarget('open')" class="waves-effect waves-light btn btn-floating pulse"><i class="material-icons">menu</i></a>
 
-		        <!-- Tap Target Structure -->
+		        <!-- Tap Target Structure-->
 		        <div class="tap-target" data-activates="menu">
 		          <div class="tap-target-content">
 	                
@@ -125,6 +147,10 @@
 
 		</div>
 
+	</main>
+
+
+
 		
 
 
@@ -142,6 +168,18 @@
         	$('document').ready(function(){
 
         		$('ul.tabs').tabs();
+
+        		//setTimeout é uma função em javascript para adiar a execução de outras funções
+       			setTimeout(function(){Materialize.fadeInImage('#fotoPerfil');}, 600);
+       			$('ul.tabs').tabs();
+
+       			//cria um toast com um botão que elemina o toast quando clicado
+			    var $toastContent = $('<span>Move mouse over my photo to see more details</span>').add($('<button class="blue-text btn-flat toast-action" onclick="toastInstance.remove()">I got it</button>'));
+			    if ( document.documentElement.clientWidth > 992) Materialize.toast($toastContent, 15000); //toast permanece no máximo 15 segundos
+			      
+			    //funções que indicam qual o toast a ser eleminado
+			    var toastElement = $('.toast').first()[0];
+			    var toastInstance = toastElement.M_Toast; 
 
 			    
 
@@ -170,8 +208,6 @@
         	
 
         </script>
-
-	</main>
 
 </html>
 
