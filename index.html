@@ -73,14 +73,21 @@
 
 			<br>
 
- 			<center>
+ 			<center class="hide-on-med-and-down">
  				<img style="width: 40%; height: 40%; opacity: 0" 
  					 src="images/profile.png" 
- 					 onmouseover="document.getElementById('moreInfo').classList.add('scale-in');" 
- 					 onmouseout="document.getElementById('moreInfo').classList.remove('scale-in');" 
- 					 alt="Perfil" 
  					 id="fotoPerfil" 
+ 					 onmouseover="document.getElementById('moreInfo').classList.add('scale-in');" 
+ 					 onmouseout="document.getElementById('moreInfo').classList.remove('scale-in');"
  					 class="circle hoverable responsive-img">	
+ 			</center>
+
+ 			<center class="hide-on-large-only">
+				<img style="width: 40%; height: 40%; opacity: 0" 
+ 					 src="images/profile.png"   
+ 					 id="fotoPerfil2"
+ 					 onclick="Materialize.toast('Hey there!', 2000, 'rounded')" 
+ 					 class="circle hoverable responsive-img">
  			</center>
 
 
@@ -184,9 +191,15 @@
     		$('ul.tabs').tabs();
 
     		//setTimeout é uma função em javascript para adiar a execução de outras funções
-   			setTimeout(
+   			setTimeout(//desktop
    				
    				function(){ Materialize.fadeInImage('#fotoPerfil'); }, 
+   				600
+   			);
+
+   			setTimeout(//mobile
+   				
+   				function(){ Materialize.fadeInImage('#fotoPerfil2'); }, 
    				600
    			);
 
@@ -196,7 +209,7 @@
 		    if (document.documentElement.clientWidth > 992){
 
 		    	//cria um toast com um botão que elemina o toast quando clicado
-		    	var $toastContent = $('<span>Move mouse over my photo to see more details</span>').add($('<button class="white-text btn-flat toast-action" onclick="Materialize.Toast.removeAll();">I got it</button>'));
+		    	var $toastContent = $('<span>Hey there! Move your mouse over my photo to see more details</span>').add($('<button class="white-text btn-flat toast-action" onclick="Materialize.Toast.removeAll();">I got it</button>'));
 
 		    	Materialize.toast($toastContent, 15000, "rounded"); //toast permanece no máximo 15 segundos
 		    }
