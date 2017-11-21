@@ -38,6 +38,8 @@
 	  	
 	  	<!--Navigation bar for Mobile-->
 	  	<nav class="hide-on-large-only">
+	  		
+	  		<!--botão para abrir a Side Bar-->
 	  		<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
 		    <a href="#" class="brand-logo right-align" style="padding-left: 2%">Ricardo Petronilho</a>
@@ -170,16 +172,27 @@
         		$('ul.tabs').tabs();
 
         		//setTimeout é uma função em javascript para adiar a execução de outras funções
-       			setTimeout(function(){Materialize.fadeInImage('#fotoPerfil');}, 600);
-       			$('ul.tabs').tabs();
+       			setTimeout(
+       				
+       				function(){ Materialize.fadeInImage('#fotoPerfil'); }, 
+       				600
+       			);
 
-       			//cria um toast com um botão que elemina o toast quando clicado
-			    var $toastContent = $('<span>Move mouse over my photo to see more details</span>').add($('<button class="blue-text btn-flat toast-action" onclick="toastInstance.remove()">I got it</button>'));
-			    if ( document.documentElement.clientWidth > 992) Materialize.toast($toastContent, 15000); //toast permanece no máximo 15 segundos
+       	
+			    
+			    if (document.documentElement.clientWidth > 992){
+
+			    	//cria um toast com um botão que elemina o toast quando clicado
+			    	var $toastContent = $('<span>Move mouse over my photo to see more details</span>').add($('<button class="blue-text btn-flat toast-action" onclick="toastInstance.remove()">I got it</button>'));
+
+			    	Materialize.toast($toastContent, 15000); //toast permanece no máximo 15 segundos
+
+			    	//funções que indicam qual o toast a ser eleminado
+				    var toastElement = $('.toast').first()[0];
+				    var toastInstance = toastElement.M_Toast; 
+			    }
 			      
-			    //funções que indicam qual o toast a ser eleminado
-			    var toastElement = $('.toast').first()[0];
-			    var toastInstance = toastElement.M_Toast; 
+			    
 
 			    
 
