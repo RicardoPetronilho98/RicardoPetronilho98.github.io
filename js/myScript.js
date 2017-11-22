@@ -6,10 +6,14 @@ function displayMessage(){
 	imageWelcomeIndice++;
 }
 
+
 var imageWelcome = ["Welcome!",
 					"Hey there!", 
    					"What's up?", 
 					"Do I know you?",
 					"Stop it!"];
 
+
 var imageWelcomeIndice = 0;
+
+

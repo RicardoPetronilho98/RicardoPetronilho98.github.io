@@ -14,8 +14,6 @@
 
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 	    <!--Let browser know website is optimized for mobile-->
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -40,86 +38,46 @@
 		    <br>
 		    <li><a href="https://stackoverflow.com/users/8709667/ricardo-petronilho?"><i class="fa fa-stack-overflow" style="font-size:36px"></i>My stackoveflow</a></li>
 		    <br>
-		    <li><a href="#"><i class="fa fa-code" style="font-size:36px"></i>My repositories</a></li>
-		    <br>
 		    <li><div class="divider"></div></li>
 		    <br>
-		    <li><a href="settings.html"><i class="material-icons" style="font-size:36px">settings</i>Settings</a></li>
+		    <li><a href="#!"><i class="material-icons" style="font-size:36px">settings</i>Settings</a></li>
 	  	</ul>
 
 
-
-	  	
 	  	<!--Navigation bar for Mobile-->
 	  	<nav class="hide-on-large-only">
 	  		
 	  		<!--botão para abrir a Side Bar-->
-	  		<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+	  		<a id="botaoSideNav" href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
-		    <a href="#" class="brand-logo right-align" style="padding-left: 2%">Ricardo Petronilho</a>
+		    <a href="index.html" class="brand-logo right-align" style="padding-left: 2%">Ricardo Petronilho</a>
 		</nav>
 
-		
-		<!--Navigation bar for Desktop-->
-		<nav class="hide-on-med-and-down">
-		    <div class="container">
-		      <div class="nav-wrapper">
-		        <a href="#" class="brand-logo waves-effect">Ricardo Petronilho</a>
-		        <ul class="right">
-		          <li><a class="waves-effect" href="https://github.com/RicardoPetronilho98">My github</a></li>
-		          <li><a class="waves-effect" href="https://www.facebook.com/ricardo.petronilho98">My facebook</a></li>
-		          <li><a class="waves-effect" href="https://stackoverflow.com/users/8709667/ricardo-petronilho?">My stackoverflow</a></li>
-		        </ul>
-		      </div>
-		    </div>
-		</nav>		
+			
 
 
 		<div class="container">
 
 			<br>
 
-			<!--imagem para Desktop-->
- 			<center class="hide-on-med-and-down">
- 				<img style="width: 40%; height: 40%; opacity: 0" 
- 					 src="images/profile.png" 
- 					 id="fotoPerfil" 
- 					 onmouseover="document.getElementById('moreInfo').classList.add('scale-in');" 
- 					 onmouseout="document.getElementById('moreInfo').classList.remove('scale-in');"
- 					 class="circle hoverable responsive-img">	
- 			</center>
+			<form action="#">
+			    <p>
+			      <input type="checkbox" id="check1"/>
+			      <label for="check1">disable tap messages</label>
+			    </p>
+			</form>
 
- 			<!--imagem para Mobile-->
+			<br><br>
+
+			<!--imagem para Mobile-->
  			<center class="hide-on-large-only">
-				<img style="width: 40%; height: 40%; opacity: 0" 
+				<img style="width: 40%; height: 40%;" 
  					 src="images/profile.png"   
  					 id="fotoPerfil2"
  					 onclick="displayMessage()" 
  					 class="circle hoverable responsive-img">
  			</center>
 
-
- 			<!--Detalhes para Desktop-->
-			<div class="hide-on-med-and-down" style="position: absolute; top: 20%; right: 17%;">
-	 			<ul class="col s3 scale-transition scale-out" id="moreInfo">
-		          <li>
-		              <i class=" black-text text-lighten-2 material-icons">location_on</i>
-		              <span class="condensed light"> Travessa da Quinta, Nº22, Fraião, <br>4715-336 Braga (Portugal)</span>
-		          </li>
-		          <br>
-		          <li>
-		            <i class=" black-text text-lighten-2 material-icons">phone_android</i>
-		            <span class="condensed light">+351 913455570</span>
-		          </li>
-		          <br>
-		          <li>
-		            <i class=" black-text text-lighten-2 material-icons">email</i>
-		            <span class="condensed light">rpetronilho98@gmail.com</span>
-		          </li>
-		        </ul>
-	   		</div>
-
-			
  			<!--Botão de detalhes para Mobile-->
 			<div class="fixed-action-btn hide-on-large-only" style="bottom: 4%; right: 6%;">
           
@@ -152,28 +110,6 @@
 		 	
   			<br>
 
-		 	<!--TABELAS com info-->
-          	<div class="row">
-            
-	            <ul class="tabs">
-	              <li class="tab col s6"><a class="active" href="#tab1">WHO Am I?</a></li>
-	              <li class="tab col s6"><a href="#tab2">RESUME</a></li>
-	            </ul>
-
-	            <!--info da TAB WHO AM I-->
-	            <div id="tab1" class="card-panel hoverable blue-grey lighten-4">
-	              <span class="grey-text text-darken-3">I'm a Computer Engineering student at Universidade do Minho in Braga, Portugal. I really enjoy programming and I'm always up to a project!</span>
-	            </div>
-	            
-	             <!--info da TAB RESUME-->
-	            <div id="tab2" class="card-panel hoverable blue-grey lighten-4">
-	              <span class="grey-text text-darken-3">something here</span>
-	            </div>
-
-          	</div> <!--acaba a TAB com info-->
-						
-			
-
 		</div>
 
 	</main>
@@ -197,33 +133,6 @@
 
     		$('ul.tabs').tabs();
 
-    		//setTimeout é uma função em javascript para adiar a execução de outras funções
-   			setTimeout(//desktop
-   				
-   				function(){ Materialize.fadeInImage('#fotoPerfil'); }, 
-   				600
-   			);
-
-   			//setTimeout é uma função em javascript para adiar a execução de outras funções
-   			setTimeout(//mobile
-   				
-   				function(){ Materialize.fadeInImage('#fotoPerfil2'); }, 
-   				600
-   			);
-
-   	
-		    
-		    //toast for Desktop
-		    if (document.documentElement.clientWidth > 992){
-
-		    	//cria um toast com um botão que elemina o toast quando clicado
-		    	var $toastContent = $('<span>Hey there! Move your mouse over my photo to see more details</span>').add($('<button class="white-text btn-flat toast-action" onclick="Materialize.Toast.removeAll();">I got it</button>'));
-
-		    	Materialize.toast($toastContent, 15000, "rounded"); //toast permanece no máximo 15 segundos
-		    }
-		      
-		    
-
 		    
 		    //side Nav for Mobile
 		    $('.button-collapse').sideNav({
@@ -243,6 +152,9 @@
 		   
 		    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
 		    //$('.collapsible').collapsible();
+		    
+
+
 
     	});
 
