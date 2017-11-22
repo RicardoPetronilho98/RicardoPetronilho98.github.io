@@ -1,0 +1,31 @@
+<html>
+	
+	<head>
+	
+	</head>
+
+	<body>
+
+		<p id="demo"></p>
+	
+	</body>
+
+	<script type="text/javascript"> //Use the XMLHttpRequest to get data from the server 
+		
+	var xmlhttp = new XMLHttpRequest();
+	
+	xmlhttp.onreadystatechange = function() {
+	    
+	    if (this.readyState == 4 && this.status == 200) {
+	        
+	        var myObj = JSON.parse(this.responseText);
+	        document.getElementById("demo").innerHTML = myObj[0].id;
+	    }
+	};
+
+	xmlhttp.open("GET", "https://api.github.com/users/RicardoPetronilho98/repos", true);
+	xmlhttp.send();
+	
+	</script>
+
+</html>

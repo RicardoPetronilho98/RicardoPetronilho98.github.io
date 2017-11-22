@@ -73,6 +73,7 @@
 
 			<br>
 
+			<!--imagem para Desktop-->
  			<center class="hide-on-med-and-down">
  				<img style="width: 40%; height: 40%; opacity: 0" 
  					 src="images/profile.png" 
@@ -82,11 +83,12 @@
  					 class="circle hoverable responsive-img">	
  			</center>
 
+ 			<!--imagem para Mobile-->
  			<center class="hide-on-large-only">
 				<img style="width: 40%; height: 40%; opacity: 0" 
  					 src="images/profile.png"   
  					 id="fotoPerfil2"
- 					 onclick="Materialize.toast('Hey there!', 2000, 'rounded')" 
+ 					 onclick="displayMessage()" 
  					 class="circle hoverable responsive-img">
  			</center>
 
@@ -171,7 +173,6 @@
 	</main>
 
 
-
 	<footer class="footer">
 		<div>
 			<span>&copy;2017 Ricardo Petronilho</span>
@@ -186,7 +187,7 @@
     <script type="text/javascript">
 
 
-    	$('document').ready(function(){
+    	$('document').ready(function(){ //JQuery library functions
 
     		$('ul.tabs').tabs();
 
@@ -197,6 +198,7 @@
    				600
    			);
 
+   			//setTimeout é uma função em javascript para adiar a execução de outras funções
    			setTimeout(//mobile
    				
    				function(){ Materialize.fadeInImage('#fotoPerfil2'); }, 
@@ -217,7 +219,7 @@
 		    
 
 		    
-
+		    //side Nav for Mobile
 		    $('.button-collapse').sideNav({
 			      
 			      menuWidth: 300, // Default is 300
@@ -232,10 +234,9 @@
 
 			// Initialize collapse button
 		    $(".button-collapse").sideNav();
+		   
 		    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
 		    //$('.collapsible').collapsible();
-
-
 
     	});
 
