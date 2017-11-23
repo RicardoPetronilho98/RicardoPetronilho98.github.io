@@ -40,7 +40,7 @@
 		    <br>
 		    <li><a href="https://stackoverflow.com/users/8709667/ricardo-petronilho?"><i class="fa fa-stack-overflow" style="font-size:36px"></i>My stackoveflow</a></li>
 		    <br>
-		    <li><a href="repositories.html"><i class="fa fa-code" style="font-size:36px"></i>My My repositories</a></li>
+		    <li><a href="repositories.html"><i class="fa fa-code" style="font-size:36px"></i>My repositories</a></li>
 		    <br>
 		    <li><div class="divider"></div></li>
 		    <br>
@@ -171,6 +171,11 @@
 	            </div>
 
           	</div> <!--acaba a TAB com info-->
+
+          	<br>
+          	<br>
+
+          	<p id="demo"></p>
 						
 			
 
@@ -243,6 +248,30 @@
 		   
 		    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
 		    //$('.collapsible').collapsible();
+
+
+
+		    //Use XMLHttpRequest objects to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing
+		    var xmlhttp = new XMLHttpRequest();
+
+		    //An EventHandler that is called whenever the readyState attribute changes
+			xmlhttp.onreadystatechange = function(){
+			    
+			    if (this.readyState == 4 && this.status == 200) {
+			        
+			        
+			    	//Parse the data with JSON.parse(), and the data becomes a JavaScript object
+			        var JSONcode = JSON.parse(this.responseText);
+			        
+			        document.getElementById("demo").innerHTML = JSONcode[0].name;
+			    }
+			};
+
+			//Initializes a request. This method is to be used from JavaScript code
+			xmlhttp.open("GET", "https://api.github.com/users/RicardoPetronilho98/repos", true);
+			
+			//Sends the request. If the request is asynchronous (which is the default), this method returns as soon as the request is sent - basicamente envia o pedido de recolha de dados
+			xmlhttp.send();
 
     	});
 
