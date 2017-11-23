@@ -15,21 +15,3 @@ var imageWelcome = ["Welcome!",
 
 
 var imageWelcomeIndice = 0;
-		
-var xmlhttp = new XMLHttpRequest();
-
-xmlhttp.onreadystatechange = function(){
-    
-    if (this.readyState == 4 && this.status == 200) {
-        
-        var JSONcode = JSON.parse(this.responseText);
-        document.getElementById("demo").innerHTML = JSONcode[0].name;
-    }
-};
-
-xmlhttp.open("GET", "https://api.github.com/users/RicardoPetronilho98/repos", true);
-xmlhttp.send();
-	
-
-
-

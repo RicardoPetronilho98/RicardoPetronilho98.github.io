@@ -40,7 +40,7 @@
 		    <br>
 		    <li><a href="https://stackoverflow.com/users/8709667/ricardo-petronilho?"><i class="fa fa-stack-overflow" style="font-size:36px"></i>My stackoveflow</a></li>
 		    <br>
-		    <li><a href="repositories.html"><i class="fa fa-code" style="font-size:36px"></i>My repositories</a></li>
+		    <li><a href="repositories.html"><i class="fa fa-code" style="font-size:36px"></i>My repositories<span class="new badge"></span></a></li>
 		    <br>
 		    <li><div class="divider"></div></li>
 		    <br>
@@ -257,8 +257,7 @@
 		    //An EventHandler that is called whenever the readyState attribute changes
 			xmlhttp.onreadystatechange = function(){
 			    
-			    if (this.readyState == 4 && this.status == 200) {
-			        
+			    if (this.readyState == 4 && this.status == 200){
 			        
 			    	//Parse the data with JSON.parse(), and the data becomes a JavaScript object
 			        var JSONcode = JSON.parse(this.responseText);
