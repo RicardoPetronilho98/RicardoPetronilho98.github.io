@@ -18,8 +18,8 @@
 	    
 	    if (this.readyState == 4 && this.status == 200) {
 	        
-	        var myObj = JSON.parse(this.responseText);
-	        document.getElementById("demo").innerHTML = myObj[0].id;
+	        var JSONcode = JSON.parse(this.responseText);
+	        document.getElementById("demo").innerHTML = JSONcode[0].name;
 	    }
 	};
 
