@@ -35,13 +35,13 @@ header, main, footer {
   color: #fff;
   padding: 20px 0;
   text-align: center;
-  position: absolute; 
+  position: relative; 
     right: 0;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 60px;
-    overflow:hidden;
+    overflow: hidden;
   
   /*font-weight: 100;*/ /*coloca a frase em não negrito!*/
 
