@@ -16,8 +16,12 @@
 
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+	    <link rel="stylesheet" href="http://yoursite.tld/prettify.css" />
+
 	    <!--Let browser know website is optimized for mobile-->
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	    <script src="https://rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer></script>
 
   	</head>
 
@@ -109,7 +113,11 @@
 		 		
 	
 
- 			<pre id="demo2"></pre>
+ 			<figure>
+ 				<?prettify lang=html linenums=true?>
+ 				<pre class="prettyprint" id="demo2"></pre>
+ 				
+ 			</figure>
 		 			
 		 
 		 		
@@ -215,7 +223,9 @@
 			        var dec = window.atob(JSONcode.content);
 
 			        function escapeHtml(text) {
+					  
 					  var map = {
+					    
 					    '&': '&amp;',
 					    '<': '&lt;',
 					    '>': '&gt;',
@@ -226,7 +236,9 @@
 					  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
 					}
 
+					
 			        
+			        //document.getElementById("demo2").innerHTML = escapeHtml(dec);
 			        document.getElementById("demo2").innerHTML = escapeHtml(dec);
 			    }
 			};
