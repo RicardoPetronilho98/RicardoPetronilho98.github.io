@@ -76,7 +76,11 @@
 		<div class="container">
 
 			<br>
- 				
+
+			<div id="href2">error</div>
+ 			
+ 			<br>
+
 			<!--Mostra código html SEM ser renderizado-->
 			<pre style="font-size:14px" class="prettyprint lang-html" id="showHTML"></pre>		 	
 
@@ -136,6 +140,8 @@
 			
 			xmlhttp.open("GET", linkINDEX, true);		
 			xmlhttp.send();
+
+			document.getElementById("href2").innerHTML = getParameterByName("i");
 
     	});
 

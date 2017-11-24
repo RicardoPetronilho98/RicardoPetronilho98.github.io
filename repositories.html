@@ -166,7 +166,7 @@
 			 		//cria dinamicamente a listagem de ficheiros e pastas
 			 		for (i = 0; i < JSONcode.tree.length; i++){
 
-			 			if (JSONcode.tree[i].type == "blob") HTMLcode += "<a href=showFile.html><i class=material-icons style=font-size:30px>insert_drive_file</i>" + JSONcode.tree[i].path + "</a><br><br>";
+			 			if (JSONcode.tree[i].type == "blob") HTMLcode += "<a href=showFile.html?i=" + i + "><i class=material-icons style=font-size:30px>insert_drive_file</i>" + JSONcode.tree[i].path + "</a><br><br>";
 		
 			 			else HTMLcode += "<a href=#><i class=material-icons style=font-size:30px>folder</i>" + JSONcode.tree[i].path + "</a><br><br>";
 			 		} 
