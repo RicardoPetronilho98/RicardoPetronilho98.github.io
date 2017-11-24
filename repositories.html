@@ -21,10 +21,9 @@
 	    <!--Let browser know website is optimized for mobile-->
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	    <script src="https://rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer></script>
+	   <script src="https://rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=Default&amp;lang=css" defer=""></script>
 
   	</head>
-
 
 
 	<main>		
@@ -109,32 +108,26 @@
 
 		 	<br>
 
-
 		 		
-	
+			<a href="#"><i class="material-icons" style="font-size:30px">folder</i>css</a>
+			
+			<br><br>
 
- 			<figure>
- 				<?prettify lang=html linenums=true?>
- 				<pre class="prettyprint" id="demo2"></pre>
- 				
- 			</figure>
+			<a href="#"><i class="material-icons" style="font-size:30px">folder</i>js</a>
+
+			<br><br>
+
+			<a href="#"><i class="material-icons" style="font-size:30px">insert_drive_file</i>index.html</a>
+
+			<br>
+
+		
+			
+			
+			<pre style="font-size:14px" class="prettyprint lang-html" id="demo2"></pre>
 		 			
 		 
-		 		
-
-
-
-
 	
-		 	
-
-
-
-
-
-
-
-
 
  			<!--Botão de detalhes para Mobile-->
 			<div class="fixed-action-btn hide-on-large-only" style="bottom: 4%; right: 6%;">
@@ -164,20 +157,20 @@
 	             
 		          </div>
 		        </div>
+  			
   			</div> <!--fim do botão dos detalhes para Mobile-->
 		 	
-  			<br>
 
 		</div>
 
 	</main>
 
 
-	<footer class="footer">
+	<!--<div class="footer">
 		<div>
 			<span>&copy;2017 Ricardo Petronilho</span>
 		</div>	
-    </footer>
+    </div>-->
 
 
   	<!--Import jQuery before materialize.js-->
@@ -219,9 +212,7 @@
 			    	//Parse the data with JSON.parse(), and the data becomes a JavaScript object
 			        var JSONcode = JSON.parse(this.responseText);
 			        var dec = window.atob(JSONcode.content);
-
-			        var dec = window.atob(JSONcode.content);
-
+			        
 			        function escapeHtml(text) {
 					  
 					  var map = {
@@ -232,6 +223,7 @@
 					    '"': '&quot;',
 					    "'": '&#039;'
 					  };
+
 
 					  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
 					}
@@ -250,9 +242,6 @@
 			xmlhttp.send();
 
     	});
-
-    	
-    	
 
     </script>
 
