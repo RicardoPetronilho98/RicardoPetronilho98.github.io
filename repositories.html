@@ -16,8 +16,6 @@
 
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	    <link rel="stylesheet" href="http://yoursite.tld/prettify.css" />
-
 	    <!--Let browser know website is optimized for mobile-->
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -95,14 +93,17 @@
 		    </ul>
 		  	<div id="test-swipe-1" class="col s12 blue">Test 1</div>
 		 	<div id="test-swipe-2" class="col s12">
-		 		<br>
-			 	
+ 				
+				<br>
+				 	
 			 	<center>
 			 		<!--botão de download dos ficheiros em formato ZIP-->
 			 		<a href="https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/zipball/master" class="waves-effect waves-light btn"><i class="material-icons right">file_download</i>Download</a>
 			 	</center>
 
-		 	</div>
+	 		</div>
+		 	
+
 		 	<div id="test-swipe-3" class="col s12 green">Test 3</div>
 		 	<div id="test-swipe-4" class="col s12 yellow">Test 4</div>
 
@@ -119,12 +120,13 @@
 
 			<a href="#"><i class="material-icons" style="font-size:30px">insert_drive_file</i>index.html</a>
 
-			<br>
+			<br><br>
 
-		
+			<div id="HTMLloop">hello</div>
+
 			
-			
-			<pre style="font-size:14px" class="prettyprint lang-html" id="demo2"></pre>
+			<!--Mostra código html SEM ser renderizado-->
+			<!--<pre style="font-size:14px" class="prettyprint lang-html" id="demo2"></pre>-->
 		 			
 		 
 	
@@ -197,48 +199,37 @@
 
 			// Initialize collapse button
 		    $(".button-collapse").sideNav();
-		   
-		    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-		    //$('.collapsible').collapsible();
 
-		    //Use XMLHttpRequest objects to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing
+		    //requestJSONcode();
+
+
 		    var xmlhttp = new XMLHttpRequest();
-
-		    //An EventHandler that is called whenever the readyState attribute changes
-			xmlhttp.onreadystatechange = function(){
 			    
+			xmlhttp.onreadystatechange = function(){
+						    
 			    if (this.readyState == 4 && this.status == 200){
-			        
-			    	//Parse the data with JSON.parse(), and the data becomes a JavaScript object
+								        
+					    	
 			        var JSONcode = JSON.parse(this.responseText);
-			        var dec = window.atob(JSONcode.content);
-			        
-			        function escapeHtml(text) {
-					  
-					  var map = {
-					    
-					    '&': '&amp;',
-					    '<': '&lt;',
-					    '>': '&gt;',
-					    '"': '&quot;',
-					    "'": '&#039;'
-					  };
 
+			        var i;
 
-					  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-					}
+			 		var HTMLcode = "";
 
-					
-			        
-			        //document.getElementById("demo2").innerHTML = escapeHtml(dec);
-			        document.getElementById("demo2").innerHTML = escapeHtml(dec);
+		 			/*for (i = 0; i < 4; i++){
+		
+			 			HTMLcode += "<a href=#><i class=material-icons style=font-size:30px>insert_drive_file</i>index.html</a>";
+			 		} */
+
+			 		HTMLcode += JSONcode.tree[0].type;		    
+							
+					document.getElementById("HTMLloop").innerHTML = HTMLcode;
 			    }
 			};
 
-			//Initializes a request. This method is to be used from JavaScript code
-			xmlhttp.open("GET", "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/git/blobs/7140c88d17200e69bfdf510ea5c3294bc972e1fe", true);
-			
-			//Sends the request. If the request is asynchronous (which is the default), this method returns as soon as the request is sent - basicamente envia o pedido de recolha de dados
+			var linkTREE = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/git/trees/7bdffe9b7d388c56c6ea14c90e26e8363f602115";
+				
+			xmlhttp.open("GET", linkTREE, true);	
 			xmlhttp.send();
 
     	});
