@@ -121,24 +121,20 @@
 			// Initialize collapse button
 		    $(".button-collapse").sideNav();
 
-
-		    var xmlhttp = new XMLHttpRequest();
-
+			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange = function(){
-					    
-			    if (this.readyState == XMLHttpRequest.DONE && this.status == 200){
-						        
+						    
+			    if (this.readyState == 4 && this.status == 200){
+								            	
 			        var JSONcode = JSON.parse(this.responseText);
 
-				    var displayHTML = escapeHtml(window.atob(JSONcode.content));
-						       		    
-					document.getElementById("showHTML").innerHTML = displayHTML;
-			    }
-			};
+					document.getElementById("showHTML").innerHTML = escapeHtml(window.atob(JSONcode.content));
+				}
+			}
 
-			var linkINDEX = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/git/blobs/7140c88d17200e69bfdf510ea5c3294bc972e1fe";
-			
-			xmlhttp.open("GET", linkINDEX, true);		
+			var url = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/git/blobs/30b9ff6d7589b1e8c221b7f1bf40388991b0879d";
+
+			xmlhttp.open("GET", url, true);	
 			xmlhttp.send();
 
 			document.getElementById("href2").innerHTML = getParameterByName("i");

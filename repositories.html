@@ -155,8 +155,7 @@
 			xmlhttp.onreadystatechange = function(){
 						    
 			    if (this.readyState == 4 && this.status == 200){
-								        
-					    	
+								            	
 			        var JSONcode = JSON.parse(this.responseText);
 
 			        var i;
@@ -172,6 +171,7 @@
 			 		} 
 
 					document.getElementById("HTMLloop").innerHTML = HTMLcode;
+
 			    }
 			};
 

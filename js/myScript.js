@@ -32,6 +32,8 @@ function escapeHtml(text) {
 	return text.replace(/[&<>"']/g, function(m) { return map[m]; });
 }
 
+
+
 function getParameterByName(name) {
     
     var url = window.location.href;
