@@ -100,7 +100,20 @@
 
 			 	<br>
 
-			 	<div id="HTMLloop"></div>
+			 	<table class="highlight bordered">
+            
+		            <thead>
+		              <tr>
+		                  <th>Name</th>
+		                  <th>Last modified</th>
+		                  <th>size</th>
+		                  <th>type</th>
+		              </tr>
+		            </thead>
+
+		            <tbody id="HTMLloop"></tbody>
+
+	        	</table>
 
 	 		</div>
 		 	
@@ -169,10 +182,10 @@
 			 		for (i = 0; i < JSONcode.length; i++){
 
 			 			//caso seja um ficheiro apresenta a imagem de ficheiro e manda o link para o showFile.html sendo enviado a diretoria e o ficheiro a ser apresentado como argumento no link
-			 			if (JSONcode[i].type == "file") HTMLcode += "<a href=showFile.html?path=" + getParameterByName("path") + "&file=" + i + "&rep=" + getParameterByName("rep") + "><i class=material-icons style=font-size:30px>insert_drive_file</i>" + JSONcode[i].name + "</a><br><br>";
+			 			if (JSONcode[i].type == "file") HTMLcode += "<tr><td><a href=showFile.html?path=" + getParameterByName("path") + "&file=" + i + "&rep=" + getParameterByName("rep") + ">" + JSONcode[i].name + "</a></td><td>12-07-2021</td><td>10</td><td>file</td></tr>";
 		
 			 			//caso seja uma pasta apresenta a imagem da pasta e manda o link para o este mesmo ficheiro mas com argumentos diferentes no link para que o linkCONTENT se altere dinamicamente
-			 			else HTMLcode += "<a href=showFolder.html?path=" + JSONcode[i].path + "&rep=" + getParameterByName("rep") + "><i class=material-icons style=font-size:30px>folder</i>" + JSONcode[i].name + "</a><br><br>";
+			 			else HTMLcode += "<tr><td><a href=showFolder.html?path=" + JSONcode[i].path + "&rep=" + getParameterByName("rep") + "><i class=material-icons style=font-size:30px>folder</i>" + JSONcode[i].name + "</a></td><td>12-07-2021</td><td>10</td><td>folder</td></tr>";
 			 		} 
 
 			 		//coloca tudo o html dinamico aqui para ser apresentado

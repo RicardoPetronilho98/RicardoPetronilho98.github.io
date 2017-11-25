@@ -78,10 +78,23 @@
 
 		
 		<div class="container">
-
 			
 			<br>
-			<div id="HTMLloop"></div>
+
+			<table class="highlight bordered">
+            
+	            <thead>
+	              <tr>
+	                  <th>Name</th>
+	                  <th>Last modified</th>
+	                  <th>size</th>
+	                  <th>type</th>
+	              </tr>
+	            </thead>
+
+	            <tbody id="HTMLloop"></tbody>
+
+        	</table>
 
 		</div>
 
@@ -143,8 +156,8 @@
 			 		//cria dinamicamente a listagem dos repositórios
 			 		for (i = 0; i < JSONcode.length; i++){
 
-			 			
-			 			HTMLcode += "<a href=showFolder.html?path=&rep=" + JSONcode[i].name + "><i class=material-icons style=font-size:30px>insert_drive_file</i>" + JSONcode[i].name + "</a><br><br>";
+			 			HTMLcode += "<tr><td><a href=showFolder.html?path=&rep=" + JSONcode[i].name + "><i class=material-icons style=font-size:30px>folder</i>" + JSONcode[i].name + "</a></td><td>12-07-2021</td><td>10</td><td>repository</td></tr>";
+
 			 		} 
 
 			 		//coloca tudo o html dinamico aqui para ser apresentado
