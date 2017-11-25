@@ -169,7 +169,7 @@
 
 			 			if (JSONcode[i].type == "file") HTMLcode += "<a href=showFile.html?i=" + i + "><i class=material-icons style=font-size:30px>insert_drive_file</i>" + JSONcode[i].name + "</a><br><br>";
 		
-			 			else HTMLcode += "<a href=repositories.html?name=" + JSONcode[i].path + "><i class=material-icons style=font-size:30px>folder</i>" + JSONcode[i].name + "</a><br><br>";
+			 			else HTMLcode += "<a href=repositories.html?path=" + JSONcode[i].path + "><i class=material-icons style=font-size:30px>folder</i>" + JSONcode[i].name + "</a><br><br>";
 			 		} 
 
 					document.getElementById("HTMLloop").innerHTML = HTMLcode;
@@ -180,14 +180,12 @@
 
 			var linkCONTENT = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/contents/";
 
-			linkCONTENT += getParameterByName("name");
+			linkCONTENT += getParameterByName("path");
 
 			//linkCONTENT += getParameterByName("name");
 				
 			xmlhttp.open("GET", linkCONTENT, true);	
 			xmlhttp.send();
-
-			document.getElementById("href").innerHTML = getParameterByName("name");
 
     	});
 
