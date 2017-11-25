@@ -131,7 +131,7 @@
 
 			        
 			        //o valor do i foi enviado como argumento no link para que se possa saber qual o ficheiro a ser apresentado na diretoria tb enviado pelo link
-			        var link = JSONcode[getParameterByName("i")].url;
+			        var link = JSONcode[getParameterByName("file")].url;
 			        //neste momento o link toma o valor do url onde se encontra o content do ficheiro em base 64
 
 
@@ -168,9 +168,8 @@
 			    }
 			};
 
-			//consoante a diretoria onde nos encontramos, o link é gerado
-			var linkCONTENT = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/contents/";
-			linkCONTENT += getParameterByName("path");
+			//consoante a diretoria e o repositorio onde nos encontramos, o link é gerado
+			var linkCONTENT = "https://api.github.com/repos/RicardoPetronilho98/" + getParameterByName("rep") + "/contents/" + getParameterByName("path");
 
 
 			xmlhttp.open("GET", linkCONTENT, true);	
