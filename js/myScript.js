@@ -49,3 +49,8 @@ function getParameterByName(name) {
     
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
+
+
+
+

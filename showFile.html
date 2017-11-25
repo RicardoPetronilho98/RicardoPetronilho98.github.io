@@ -122,22 +122,46 @@
 		    $(".button-collapse").sideNav();
 
 			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.onreadystatechange = function(){
+		    
+		    xmlhttp.onreadystatechange = function(){
 						    
 			    if (this.readyState == 4 && this.status == 200){
 								            	
 			        var JSONcode = JSON.parse(this.responseText);
 
-					document.getElementById("showHTML").innerHTML = escapeHtml(window.atob(JSONcode.content));
-				}
-			}
+			        var link = JSONcode.tree[getParameterByName("i")].url;
 
-			var url = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/git/blobs/30b9ff6d7589b1e8c221b7f1bf40388991b0879d";
+			        //--------------------------------------------------------------------------------
+					//captura o conteudo de cada ficheiro
 
-			xmlhttp.open("GET", url, true);	
+					var xmlhttp2 = new XMLHttpRequest();
+					
+					xmlhttp2.onreadystatechange = function(){
+								    
+					    if (this.readyState == 4 && this.status == 200){
+										            	
+					        var JSONcode = JSON.parse(this.responseText);
+
+							document.getElementById("showHTML").innerHTML = escapeHtml(window.atob(JSONcode.content));
+						}
+					}
+
+					xmlhttp2.open("GET", link, true);	
+					xmlhttp2.send();
+					//--------------------------------------------------------------------------------
+
+			    }
+			};
+
+			var linkTREE = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/git/trees/7bdffe9b7d388c56c6ea14c90e26e8363f602115";
+				
+			xmlhttp.open("GET", linkTREE, true);	
 			xmlhttp.send();
 
+
+			//por questoes de teste
 			document.getElementById("href2").innerHTML = getParameterByName("i");
+
 
     	});
 
