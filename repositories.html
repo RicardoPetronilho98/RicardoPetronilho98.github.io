@@ -108,9 +108,6 @@
 		 	<div id="test-swipe-3" class="col s12">Test 3</div>
 		 	<div id="test-swipe-4" class="col s12">Test 4</div>
 
-
-			<div id="href"></div>
-
 		</div>
 
 	</main>
@@ -167,7 +164,7 @@
 			 		//cria dinamicamente a listagem de ficheiros e pastas
 			 		for (i = 0; i < JSONcode.length; i++){
 
-			 			if (JSONcode[i].type == "file") HTMLcode += "<a href=showFile.html?i=" + i + "><i class=material-icons style=font-size:30px>insert_drive_file</i>" + JSONcode[i].name + "</a><br><br>";
+			 			if (JSONcode[i].type == "file") HTMLcode += "<a href=showFile.html?path=" + getParameterByName("path") + "&i=" + i + "><i class=material-icons style=font-size:30px>insert_drive_file</i>" + JSONcode[i].name + "</a><br><br>";
 		
 			 			else HTMLcode += "<a href=repositories.html?path=" + JSONcode[i].path + "><i class=material-icons style=font-size:30px>folder</i>" + JSONcode[i].name + "</a><br><br>";
 			 		} 
@@ -178,6 +175,7 @@
 			    }
 			};
 
+			
 			var linkCONTENT = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/contents/";
 
 			linkCONTENT += getParameterByName("path");
