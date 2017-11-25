@@ -129,7 +129,7 @@
 								            	
 			        var JSONcode = JSON.parse(this.responseText);
 
-			        var link = JSONcode.tree[getParameterByName("i")].url;
+			        var link = JSONcode[getParameterByName("i")].url;
 
 			        //--------------------------------------------------------------------------------
 					//captura o conteudo de cada ficheiro
@@ -140,9 +140,9 @@
 								    
 					    if (this.readyState == 4 && this.status == 200){
 										            	
-					        var JSONcode = JSON.parse(this.responseText);
+					        var JSONcode2 = JSON.parse(this.responseText);
 
-							document.getElementById("showHTML").innerHTML = escapeHtml(window.atob(JSONcode.content));
+							document.getElementById("showHTML").innerHTML = escapeHtml(window.atob(JSONcode2.content));
 						}
 					}
 
@@ -153,9 +153,9 @@
 			    }
 			};
 
-			var linkTREE = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/git/trees/7bdffe9b7d388c56c6ea14c90e26e8363f602115";
-				
-			xmlhttp.open("GET", linkTREE, true);	
+			var linkCONTENT = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/contents/";
+
+			xmlhttp.open("GET", linkCONTENT, true);	
 			xmlhttp.send();
 
 

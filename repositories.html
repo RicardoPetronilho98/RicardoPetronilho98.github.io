@@ -162,11 +162,11 @@
 			 		var HTMLcode = "";
 
 			 		//cria dinamicamente a listagem de ficheiros e pastas
-			 		for (i = 0; i < JSONcode.tree.length; i++){
+			 		for (i = 0; i < JSONcode.length; i++){
 
-			 			if (JSONcode.tree[i].type == "blob") HTMLcode += "<a href=showFile.html?i=" + i + "><i class=material-icons style=font-size:30px>insert_drive_file</i>" + JSONcode.tree[i].path + "</a><br><br>";
+			 			if (JSONcode[i].type == "file") HTMLcode += "<a href=showFile.html?i=" + i + "><i class=material-icons style=font-size:30px>insert_drive_file</i>" + JSONcode[i].path + "</a><br><br>";
 		
-			 			else HTMLcode += "<a href=#><i class=material-icons style=font-size:30px>folder</i>" + JSONcode.tree[i].path + "</a><br><br>";
+			 			else HTMLcode += "<a href=#><i class=material-icons style=font-size:30px>folder</i>" + JSONcode[i].path + "</a><br><br>";
 			 		} 
 
 					document.getElementById("HTMLloop").innerHTML = HTMLcode;
@@ -174,9 +174,9 @@
 			    }
 			};
 
-			var linkTREE = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/git/trees/7bdffe9b7d388c56c6ea14c90e26e8363f602115";
+			var linkCONTENT = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/contents/";
 				
-			xmlhttp.open("GET", linkTREE, true);	
+			xmlhttp.open("GET", linkCONTENT, true);	
 			xmlhttp.send();
 
 			document.getElementById("href").innerHTML = window.location.href;
