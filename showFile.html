@@ -117,6 +117,10 @@
 			// Initialize collapse button
 		    $(".button-collapse").sideNav();
 
+			
+
+		    //-----------------------------------------------------------------------------------------------------
+
 			var xmlhttp = new XMLHttpRequest();
 		    
 		    xmlhttp.onreadystatechange = function(){
@@ -125,12 +129,19 @@
 								            	
 			        var JSONcode = JSON.parse(this.responseText);
 
+			        
+			        //o valor do i foi enviado como argumento no link para que se possa saber qual o ficheiro a ser apresentado na diretoria tb enviado pelo link
 			        var link = JSONcode[getParameterByName("i")].url;
+			        //neste momento o link toma o valor do url onde se encontra o content do ficheiro em base 64
+
 
 			        
 
+
+
+
 			        //--------------------------------------------------------------------------------
-					//captura o conteudo de cada ficheiro
+					//captura o conteudo dentro de cada ficheiro
 
 					var xmlhttp2 = new XMLHttpRequest();
 					
@@ -140,6 +151,7 @@
 										            	
 					        var JSONcode2 = JSON.parse(this.responseText);
 
+					        //remove os caracteres especiais para que possa ser apresentado como código e antes é descodificado da base 64 para ASCII
 							document.getElementById("showHTML").innerHTML = escapeHtml(window.atob(JSONcode2.content));
 						}
 					}
@@ -151,15 +163,21 @@
 
 
 
+
+
 			    }
 			};
 
+			//consoante a diretoria onde nos encontramos, o link é gerado
 			var linkCONTENT = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/contents/";
-
 			linkCONTENT += getParameterByName("path");
+
 
 			xmlhttp.open("GET", linkCONTENT, true);	
 			xmlhttp.send();
+ 
+			//-----------------------------------------------------------------------------------------------------
+
 
 
     	});

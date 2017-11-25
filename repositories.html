@@ -145,7 +145,12 @@
 			// Initialize collapse button
 		    $(".button-collapse").sideNav();
 
-		
+		    
+
+
+
+
+		    //-----------------------------------------------------------------------------------------------------
 
 		    var xmlhttp = new XMLHttpRequest();
 			    
@@ -153,37 +158,40 @@
 						    
 			    if (this.readyState == 4 && this.status == 200){
 								            	
+			        //cria um objeto javascript para poder ser obtida a informação dele
 			        var JSONcode = JSON.parse(this.responseText);
 
 			        var i;
 
 			 		var HTMLcode = "";
 
-			 		//aqui tenho de aplicar a recursividade consoante o link
-
 			 		//cria dinamicamente a listagem de ficheiros e pastas
 			 		for (i = 0; i < JSONcode.length; i++){
 
+			 			//caso seja um ficheiro apresenta a imagem de ficheiro e manda o link para o showFile.html sendo enviado a diretoria e o ficheiro a ser apresentado
 			 			if (JSONcode[i].type == "file") HTMLcode += "<a href=showFile.html?path=" + getParameterByName("path") + "&i=" + i + "><i class=material-icons style=font-size:30px>insert_drive_file</i>" + JSONcode[i].name + "</a><br><br>";
 		
+			 			//caso seja uma pasta apresenta a imagem da pasta e manda o link para o este mesmo ficheiro mas com argumentos diferentes no link para que o linkCONTENT se altere dinamicamente
 			 			else HTMLcode += "<a href=repositories.html?path=" + JSONcode[i].path + "><i class=material-icons style=font-size:30px>folder</i>" + JSONcode[i].name + "</a><br><br>";
 			 		} 
 
+			 		//coloca tudo o html dinamico aqui para ser apresentado
 					document.getElementById("HTMLloop").innerHTML = HTMLcode;
-
 
 			    }
 			};
 
-			
-			var linkCONTENT = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/contents/";
 
+			//consoante a diretoria onde nos encontramos, o link é gerado
+			var linkCONTENT = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/contents/";
 			linkCONTENT += getParameterByName("path");
 
-			//linkCONTENT += getParameterByName("name");
 				
 			xmlhttp.open("GET", linkCONTENT, true);	
 			xmlhttp.send();
+
+			//-----------------------------------------------------------------------------------------------------
+
 
     	});
 
