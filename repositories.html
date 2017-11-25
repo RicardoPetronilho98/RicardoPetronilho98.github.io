@@ -95,7 +95,7 @@
 				 	
 			 	<center>
 			 		<!--botão de download dos ficheiros em formato ZIP-->
-			 		<a href="https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/zipball/master" class="waves-effect waves-light btn"><i class="material-icons right">file_download</i>Download</a>
+			 		<a href="https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/zipball/master" class="waves-effect waves-light btn"><i class="material-icons right">file_download</i>Download ALL .ZIP</a>
 			 	</center>
 
 			 	<br>
@@ -162,25 +162,32 @@
 
 			 		var HTMLcode = "";
 
+			 		//aqui tenho de aplicar a recursividade consoante o link
+
 			 		//cria dinamicamente a listagem de ficheiros e pastas
 			 		for (i = 0; i < JSONcode.length; i++){
 
-			 			if (JSONcode[i].type == "file") HTMLcode += "<a href=showFile.html?i=" + i + "><i class=material-icons style=font-size:30px>insert_drive_file</i>" + JSONcode[i].path + "</a><br><br>";
+			 			if (JSONcode[i].type == "file") HTMLcode += "<a href=showFile.html?i=" + i + "><i class=material-icons style=font-size:30px>insert_drive_file</i>" + JSONcode[i].name + "</a><br><br>";
 		
-			 			else HTMLcode += "<a href=#><i class=material-icons style=font-size:30px>folder</i>" + JSONcode[i].path + "</a><br><br>";
+			 			else HTMLcode += "<a href=repositories.html?name=" + JSONcode[i].path + "><i class=material-icons style=font-size:30px>folder</i>" + JSONcode[i].name + "</a><br><br>";
 			 		} 
 
 					document.getElementById("HTMLloop").innerHTML = HTMLcode;
+
 
 			    }
 			};
 
 			var linkCONTENT = "https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/contents/";
+
+			linkCONTENT += getParameterByName("name");
+
+			//linkCONTENT += getParameterByName("name");
 				
 			xmlhttp.open("GET", linkCONTENT, true);	
 			xmlhttp.send();
 
-			document.getElementById("href").innerHTML = window.location.href;
+			document.getElementById("href").innerHTML = getParameterByName("name");
 
     	});
 
