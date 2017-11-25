@@ -67,9 +67,10 @@
 		      <div class="nav-wrapper">
 		        <a href="index.html" class="brand-logo waves-effect">Ricardo Petronilho</a>
 		        <ul class="right">
-		          <li><a class="waves-effect" href="https://github.com/RicardoPetronilho98">My github</a></li>
-		          <li><a class="waves-effect" href="https://www.facebook.com/ricardo.petronilho98">My facebook</a></li>
-		          <li><a class="waves-effect" href="https://stackoverflow.com/users/8709667/ricardo-petronilho?">My stackoverflow</a></li>
+		          <li><a class="waves-effect" href="repositories.html">My repositories</a>
+		          <li><a class="waves-effect" href="https://github.com/RicardoPetronilho98">github</a></li>
+		          <li><a class="waves-effect" href="https://www.facebook.com/ricardo.petronilho98">facebook</a></li>
+		          <li><a class="waves-effect" href="https://stackoverflow.com/users/8709667/ricardo-petronilho?">stackoverflow</a></li>
 		        </ul>
 		      </div>
 		    </div>
@@ -100,17 +101,32 @@
 
 			 	<br>
 
-			 	<table class="highlight bordered">
+
+			 	<!--Table for Desktop-->
+			 	<table class="highlight bordered hide-on-med-and-down">
             
 		            <thead>
 		              <tr>
 		                  <th>Name</th>
-		                  <th>size (B)</th>
 		                  <th>type</th>
 		              </tr>
 		            </thead>
 
 		            <tbody id="HTMLloop"></tbody>
+
+	        	</table>
+
+
+	        	<!--Table for Mobile-->
+	        	<table class="highlight bordered hide-on-large-only">
+	            
+		            <thead>
+		              <tr>
+		                  <th>Name</th>
+		              </tr>
+		            </thead>
+
+		            <tbody id="HTMLloop2"></tbody>
 
 	        	</table>
 
@@ -181,18 +197,36 @@
 
 			 		var HTMLcode = "";
 
-			 		//cria dinamicamente a listagem de ficheiros e pastas
+			 		var HTMLcode2 = "";
+
+
+			 		//cria dinamicamente a listagem de ficheiros e pastas para Desktop
 			 		for (i = 0; i < JSONcode.length; i++){
 
 			 			//caso seja um ficheiro apresenta a imagem de ficheiro e manda o link para o showFile.html sendo enviado a diretoria e o ficheiro a ser apresentado como argumento no link
-			 			if (JSONcode[i].type == "file") HTMLcode += "<tr><td><a href=showFile.html?path=" + getParameterByName("path") + "&file=" + i + "&rep=" + getParameterByName("rep") + ">" + JSONcode[i].name + "</a></td><td>" + JSONcode[i].size + "</td><td>file</td></tr>";
+			 			if (JSONcode[i].type == "file") HTMLcode += "<tr><td><a href=showFile.html?path=" + getParameterByName("path") + "&file=" + i + "&rep=" + getParameterByName("rep") + ">" + JSONcode[i].name + "</a></td><td>file</td></tr>";
 		
 			 			//caso seja uma pasta apresenta a imagem da pasta e manda o link para o este mesmo ficheiro mas com argumentos diferentes no link para que o linkCONTENT se altere dinamicamente
-			 			else HTMLcode += "<tr><td><a href=showFolder.html?path=" + JSONcode[i].path + "&rep=" + getParameterByName("rep") + "><i class=material-icons style=font-size:20px>folder</i>" + JSONcode[i].name + "</a></td><td>" + JSONcode[i].size + "</td><td>folder</td></tr>";
+			 			else HTMLcode += "<tr><td><a href=showFolder.html?path=" + JSONcode[i].path + "&rep=" + getParameterByName("rep") + "><i class=material-icons style=font-size:20px>folder</i>" + JSONcode[i].name + "</a></td><td>folder</td></tr>";
 			 		} 
 
-			 		//coloca tudo o html dinamico aqui para ser apresentado
+
+			 		//cria dinamicamente a listagem de ficheiros e pastas para Mobile
+			 		for (i = 0; i < JSONcode.length; i++){
+
+			 			//caso seja um ficheiro apresenta a imagem de ficheiro e manda o link para o showFile.html sendo enviado a diretoria e o ficheiro a ser apresentado como argumento no link
+			 			if (JSONcode[i].type == "file") HTMLcode2 += "<tr><td><a href=showFile.html?path=" + getParameterByName("path") + "&file=" + i + "&rep=" + getParameterByName("rep") + ">" + JSONcode[i].name + "</a></td></tr>";
+		
+			 			//caso seja uma pasta apresenta a imagem da pasta e manda o link para o este mesmo ficheiro mas com argumentos diferentes no link para que o linkCONTENT se altere dinamicamente
+			 			else HTMLcode2 += "<tr><td><a href=showFolder.html?path=" + JSONcode[i].path + "&rep=" + getParameterByName("rep") + "><i class=material-icons style=font-size:20px>folder</i>" + JSONcode[i].name + "</a></td></tr>";
+			 		} 
+
+
+			 		//coloca tudo o html dinamico aqui para ser apresentado para Desktop
 					document.getElementById("HTMLloop").innerHTML = HTMLcode;
+
+					//coloca tudo o html dinamico aqui para ser apresentado para Mobile
+					document.getElementById("HTMLloop2").innerHTML = HTMLcode2;
 
 			    }
 			};
