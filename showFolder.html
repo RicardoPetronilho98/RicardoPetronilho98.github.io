@@ -84,7 +84,7 @@
 			
 		 	<center>
 		 		<!--botão de download dos ficheiros em formato ZIP-->
-		 		<a href="https://api.github.com/repos/RicardoPetronilho98/RicardoPetronilho98.github.io/zipball/master" class="waves-effect waves-light btn"><i class="material-icons right">file_download</i>Download ALL .ZIP</a>
+		 		<a id="downloadButton" class="waves-effect waves-light btn"><i class="material-icons right">file_download</i>Download ALL .ZIP</a>
 		 	</center>
 
 		 	<br>
@@ -121,8 +121,8 @@
 
 		</div>
 
-		<div id="botaoVoltar" class="fixed-action-btn" style="bottom: 20px; right: 24px;">
-			<a id="botaoVoltarHref" href="javascript:history.back()" class="waves-effect waves-light btn"><i class="material-icons right">arrow_back</i>Voltar</a>
+		<div class="fixed-action-btn" style="bottom: 20px; right: 24px;">
+			<a href="javascript:history.back()" class="waves-effect waves-light btn"><i class="material-icons right">arrow_back</i>Voltar</a>
 	    </div>
 
 	</main>
@@ -224,6 +224,8 @@
 
 			//-----------------------------------------------------------------------------------------------------
 
+
+			document.getElementById("downloadButton").href = "https://api.github.com/repos/RicardoPetronilho98/" + getParameterByName("rep") + "/zipball/master";
 
 
     	});
