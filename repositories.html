@@ -172,7 +172,7 @@
 			 		//cria dinamicamente a listagem dos repositórios para Desktop
 			 		for (i = 0; i < JSONcode.length; i++){
 
-			 			HTMLcode += "<tr><td><a href=showFolder.html?path=&rep=" + JSONcode[i].name + "><i class=material-icons style=font-size:20px>folder</i>" + JSONcode[i].name + "</a></td><td>" + JSONcode[i].updated_at + "</td><td>" + JSONcode[i].size + "</td><td>repository</td></tr>";
+			 			HTMLcode += "<tr><td><a href=showFolder.html?path=&rep=" + JSONcode[i].name + "><i class=material-icons style=font-size:20px>folder</i>" + JSONcode[i].name + "</a></td><td>" + getDateAndTime(JSONcode[i].pushed_at) + "</td><td>" + JSONcode[i].size + "</td><td>repository</td></tr>";
 
 			 		} 
 

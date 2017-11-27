@@ -51,6 +51,17 @@ function getParameterByName(name) {
 }
 
 
+function getDateAndTime(str){
+
+	var res = "";
+
+	res += str.charAt(8) + str.charAt(9) + "-" + str.charAt(5) + str.charAt(6) + "-"  + str.charAt(0) + str.charAt(1) + str.charAt(2) + str.charAt(3);
+    res += " at " + str.charAt(11) + str.charAt(12) + ":" + str.charAt(14) + str.charAt(15) + ":" + str.charAt(17) + str.charAt(18);
+
+	return res; 
+}
+
+
 
 
 
