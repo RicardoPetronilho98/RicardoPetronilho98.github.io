@@ -5,7 +5,8 @@
 
 		<link rel="icon" href="images/codeIcon.png">
 
-		<script src="https://rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=Default&amp;lang=css" defer=""></script>
+		<link rel="stylesheet" type="text/css" href="google-code-prettify/prettify.css">
+		<script type="text/javascript" src="google-code-prettify/prettify.js"></script>
 	    
 	    <!--Import Google Icon Font-->
 	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -79,7 +80,7 @@
 			<br>
 
 			<!--Mostra código html SEM ser renderizado-->
-			<pre style="font-size:14px" class="prettyprint lang-html" id="showHTML"></pre>		 	
+			<pre style="font-size:14px" class="prettyprint" id="showHTML"></pre>		 	
 
 		</div>
 
@@ -182,7 +183,7 @@
  
 			//-----------------------------------------------------------------------------------------------------
 
-
+			PR.prettyPrint();
 
     	});
 
